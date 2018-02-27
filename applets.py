@@ -250,27 +250,49 @@ def sanitize(time_string):
 ##(sarah_name,sarch_dob) = sarah_data1.pop(0),sarah_data1.pop(0)
 ##print(sarah_name + "'s faster times are: " + str(sorted(set([sanitize(t) for t in sarah_data1]))[0:3]))
 
-#2. 使用字典关联数据，改写get_coach_data()，将print语句中的str(……)写入函数
+###2. 使用字典关联数据，改写get_coach_data()，将print语句中的str(……)写入函数
+##
+##def get_coach_data(filename):
+##        try:
+##                with open(filename) as f:
+##                        data=f.readline()
+##                temp=data.strip().split(',')
+##                return({'Name':temp.pop(0),
+##                        'Dob':temp.pop(0),
+##                        'Times':str(sorted(set([sanitize(t) for t in temp]))[0:3])})
+##        except IOError as ioerr:
+##                print("File Error: "+str(ioerr))
+##                return(None)
+##james_data2 = get_coach_data('james2.txt')
+##julie_data2 = get_coach_data('julie2.txt')
+##mikey_data2 = get_coach_data('mikey2.txt')
+##sarah_data2 = get_coach_data('sarah2.txt')
+##
+##print(james_data2['Name']+"'s fastest times are: "+james_data2['Times'])
+##print(julie_data2['Name']+"'s fastest times are: "+julie_data2['Times'])
+##print(mikey_data2['Name']+"'s fastest times are: "+mikey_data2['Times'])
+##print(sarah_data2['Name']+"'s fastest times are: "+sarah_data2['Times'])
 
+#3. 使用class定义类，类中的方法也用def进行定义
+
+class Athlete:
+        def __init__(self, a_name, a_dob=None, a_times=[]):#每个定义类的特殊方法，控制如何初始化对象
+                #The code to initialize a "Athlete" object.
+                self.name=a_name
+                self.dob=a_dob
+                self.times=a_times
+        def top3(self):
+                #sanitize()不用修改
+                return(sorted(set([sanitize(t) for t in self.times]))[0:3])
+#get_coach_data()需要修改
 def get_coach_data(filename):
         try:
                 with open(filename) as f:
                         data=f.readline()
                 temp=data.strip().split(',')
-                return({'Name':temp.pop(0),
-                        'Dob':temp.pop(0),
-                        'Times':str(sorted(set([sanitize(t) for t in temp]))[0:3])})
+                return(Athlete(temp.pop(0),temp.pop(0),temp))
         except IOError as ioerr:
                 print("File Error: "+str(ioerr))
                 return(None)
-james_data2 = get_coach_data('james2.txt')
-julie_data2 = get_coach_data('julie2.txt')
-mikey_data2 = get_coach_data('mikey2.txt')
-sarah_data2 = get_coach_data('sarah2.txt')
-
-print(james_data2['Name']+"'s fastest times are: "+james_data2['Times'])
-print(julie_data2['Name']+"'s fastest times are: "+julie_data2['Times'])
-print(mikey_data2['Name']+"'s fastest times are: "+mikey_data2['Times'])
-print(sarah_data2['Name']+"'s fastest times are: "+sarah_data2['Times'])
-
-
+james_data3=get_coach_data('james2.txt')
+print(james_data3.name+"'s fastest times are"+str(james_data3.top3()))

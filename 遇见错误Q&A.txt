@@ -1,0 +1,2 @@
+Q:	SyntaxError: invalid character in identifier
+A:	在提示错误的附近检查标点符号修改为英文格式
