@@ -1,0 +1,361 @@
+print('i like python')
+i like python
+>>> if 23>34
+SyntaxError: invalid syntax
+>>> if 23>34:
+	print('It\'s panic!')
+
+>>> 
+>>> 
+>>> if 23>34:
+	print('It\'s panic!')
+
+	
+>>> if 23>34:
+	print("It's panic!")
+
+	
+>>> if 23>22:
+	print("It's panic!")
+
+	
+It's panic!
+>>> if 23>22:
+	print("It's panic!")
+	else:
+		
+SyntaxError: invalid syntax
+>>> if 23>34:
+	print("It's panic!")
+else:
+	print("Don't panic!")
+
+	
+Don't panic!
+>>> movies = ["the holy Grail",
+	  "the life of brian",
+	  "the meaning of life"]
+>>> movies
+['the holy Grail', 'the life of brian', 'the meaning of life']
+>>> print(movies[1])
+the life of brian
+>>> print(movies[3])
+Traceback (most recent call last):
+  File "<pyshell#23>", line 1, in <module>
+    print(movies[3])
+IndexError: list index out of range
+>>> cast = ['cleese','plain','jones','idle']
+>>> print(cast)
+['cleese', 'plain', 'jones', 'idle']
+>>> print(len(cast))
+4
+>>> print(cast[2])
+jones
+>>> cast.append('gilliam')
+>>> cast
+['cleese', 'plain', 'jones', 'idle', 'gilliam']
+>>> cast.pop()
+'gilliam'
+>>> cast
+['cleese', 'plain', 'jones', 'idle']
+>>> cast.extend(['gilliam','chapman'])
+>>> cast
+['cleese', 'plain', 'jones', 'idle', 'gilliam', 'chapman']
+>>> cast.remove('plain')
+>>> cast
+['cleese', 'jones', 'idle', 'gilliam', 'chapman']
+>>> cast.insert(3,'plain')
+>>> cast
+['cleese', 'jones', 'idle', 'plain', 'gilliam', 'chapman']
+>>> fav_movies=['the holy grail','the life of brian']
+>>> print(fav_movies[0])
+the holy grail
+>>> print(fav_movies[1])
+the life of brian
+>>> for each_flick in fav_movies:
+	print(each_flick)
+
+	
+the holy grail
+the life of brian
+>>> fav_movies2=['aaa','bbb','ccc']
+>>> count = 0
+>>> wihle count<len(fav_movies2
+		
+SyntaxError: invalid syntax
+>>> wihle count<len(fav_movies2):
+	
+SyntaxError: invalid syntax
+>>> coutt=0
+>>> while count<len(fav_movies2):
+	print(fav_movies2[count])
+	count++
+	
+SyntaxError: invalid syntax
+>>> while count<len(fav_movies2):
+	print(fav_movies2[count])
+	count = count+1
+
+	
+aaa
+bbb
+ccc
+>>> fruits = ['banana','apple','mango']
+>>> for a in fruits:
+	print(a)
+
+	
+banana
+apple
+mango
+>>> fruits2=['banana2','apple2','mango2']
+>>> for b in range(len(fruits))
+SyntaxError: invalid syntax
+>>> for b in range(len(fruits)):
+	print(fruits[index])
+
+	
+Traceback (most recent call last):
+  File "<pyshell#62>", line 2, in <module>
+    print(fruits[index])
+NameError: name 'index' is not defined
+>>> for b in range(len(fruits)):
+	print(fruits[b])
+
+	
+banana
+apple
+mango
+>>> for b in range(len(fruits2)):
+	print(fruits[b])
+
+	
+banana
+apple
+mango
+>>> range(len(fruits2))
+range(0, 3)
+>>> str1=('asl"asdf',sfdd)
+Traceback (most recent call last):
+  File "<pyshell#68>", line 1, in <module>
+    str1=('asl"asdf',sfdd)
+NameError: name 'sfdd' is not defined
+>>> str1=['asl"asdf',sfdd]
+Traceback (most recent call last):
+  File "<pyshell#69>", line 1, in <module>
+    str1=['asl"asdf',sfdd]
+NameError: name 'sfdd' is not defined
+>>> str1=['asl"asdf','sfdd']
+>>> str1
+['asl"asdf', 'sfdd']
+>>> str1=["asl"asdf","sfdd"]
+      
+SyntaxError: invalid syntax
+>>> str1=["asl\"asdf","sfdd"]
+>>> str1
+['asl"asdf', 'sfdd']
+>>> movies=["the holy grial",1975,"terry jones & terry gilliam",91,["graham chapman",["machael palin","john cleese","terry gilliam","eric idle","terry jones"]]]
+>>> movies[4]
+['graham chapman', ['machael palin', 'john cleese', 'terry gilliam', 'eric idle', 'terry jones']]
+>>> movies[4][0];
+'graham chapman'
+>>> movies[4][1]
+['machael palin', 'john cleese', 'terry gilliam', 'eric idle', 'terry jones']
+>>> movies[4][1][1]
+'john cleese'
+>>> for each_item in movies:
+	print(each_item)
+
+	
+the holy grial
+1975
+terry jones & terry gilliam
+91
+['graham chapman', ['machael palin', 'john cleese', 'terry gilliam', 'eric idle', 'terry jones']]
+>>> for each_item in movies:
+	if isinstance(each_item,list):
+		for nested_item in each_item:
+			print(nexted_item)
+
+			
+Traceback (most recent call last):
+  File "<pyshell#87>", line 4, in <module>
+    print(nexted_item)
+NameError: name 'nexted_item' is not defined
+>>> for each_item in movies:
+	if isinstance(each_item,list):
+		for nested_item in each_item:
+			print(nexted_item)
+	else:
+		print(each_item)
+
+		
+the holy grial
+1975
+terry jones & terry gilliam
+91
+Traceback (most recent call last):
+  File "<pyshell#91>", line 4, in <module>
+    print(nexted_item)
+NameError: name 'nexted_item' is not defined
+>>> for each_item in movies:
+	if isinstance(each_item,list):
+		for nested_item in each_item:
+			print(nested_item)
+	else:
+		print(each_item)
+
+		
+the holy grial
+1975
+terry jones & terry gilliam
+91
+graham chapman
+['machael palin', 'john cleese', 'terry gilliam', 'eric idle', 'terry jones']
+>>> dir(__builtins__)
+['ArithmeticError', 'AssertionError', 'AttributeError', 'BaseException', 'BlockingIOError', 'BrokenPipeError', 'BufferError', 'BytesWarning', 'ChildProcessError', 'ConnectionAbortedError', 'ConnectionError', 'ConnectionRefusedError', 'ConnectionResetError', 'DeprecationWarning', 'EOFError', 'Ellipsis', 'EnvironmentError', 'Exception', 'False', 'FileExistsError', 'FileNotFoundError', 'FloatingPointError', 'FutureWarning', 'GeneratorExit', 'IOError', 'ImportError', 'ImportWarning', 'IndentationError', 'IndexError', 'InterruptedError', 'IsADirectoryError', 'KeyError', 'KeyboardInterrupt', 'LookupError', 'MemoryError', 'NameError', 'None', 'NotADirectoryError', 'NotImplemented', 'NotImplementedError', 'OSError', 'OverflowError', 'PendingDeprecationWarning', 'PermissionError', 'ProcessLookupError', 'RecursionError', 'ReferenceError', 'ResourceWarning', 'RuntimeError', 'RuntimeWarning', 'StopAsyncIteration', 'StopIteration', 'SyntaxError', 'SyntaxWarning', 'SystemError', 'SystemExit', 'TabError', 'TimeoutError', 'True', 'TypeError', 'UnboundLocalError', 'UnicodeDecodeError', 'UnicodeEncodeError', 'UnicodeError', 'UnicodeTranslateError', 'UnicodeWarning', 'UserWarning', 'ValueError', 'Warning', 'WindowsError', 'ZeroDivisionError', '_', '__build_class__', '__debug__', '__doc__', '__import__', '__loader__', '__name__', '__package__', '__spec__', 'abs', 'all', 'any', 'ascii', 'bin', 'bool', 'bytearray', 'bytes', 'callable', 'chr', 'classmethod', 'compile', 'complex', 'copyright', 'credits', 'delattr', 'dict', 'dir', 'divmod', 'enumerate', 'eval', 'exec', 'exit', 'filter', 'float', 'format', 'frozenset', 'getattr', 'globals', 'hasattr', 'hash', 'help', 'hex', 'id', 'input', 'int', 'isinstance', 'issubclass', 'iter', 'len', 'license', 'list', 'locals', 'map', 'max', 'memoryview', 'min', 'next', 'object', 'oct', 'open', 'ord', 'pow', 'print', 'property', 'quit', 'range', 'repr', 'reversed', 'round', 'set', 'setattr', 'slice', 'sorted', 'staticmethod', 'str', 'sum', 'super', 'tuple', 'type', 'vars', 'zip']
+>>> help(ArithmeticError)
+Help on class ArithmeticError in module builtins:
+
+class ArithmeticError(Exception)
+ |  Base class for arithmetic errors.
+ |  
+ |  Method resolution order:
+ |      ArithmeticError
+ |      Exception
+ |      BaseException
+ |      object
+ |  
+ |  Methods defined here:
+ |  
+ |  __init__(self, /, *args, **kwargs)
+ |      Initialize self.  See help(type(self)) for accurate signature.
+ |  
+ |  __new__(*args, **kwargs) from builtins.type
+ |      Create and return a new object.  See help(type) for accurate signature.
+ |  
+ |  ----------------------------------------------------------------------
+ |  Methods inherited from BaseException:
+ |  
+ |  __delattr__(self, name, /)
+ |      Implement delattr(self, name).
+ |  
+ |  __getattribute__(self, name, /)
+ |      Return getattr(self, name).
+ |  
+ |  __reduce__(...)
+ |      helper for pickle
+ |  
+ |  __repr__(self, /)
+ |      Return repr(self).
+ |  
+ |  __setattr__(self, name, value, /)
+ |      Implement setattr(self, name, value).
+ |  
+ |  __setstate__(...)
+ |  
+ |  __str__(self, /)
+ |      Return str(self).
+ |  
+ |  with_traceback(...)
+ |      Exception.with_traceback(tb) --
+ |      set self.__traceback__ to tb and return self.
+ |  
+ |  ----------------------------------------------------------------------
+ |  Data descriptors inherited from BaseException:
+ |  
+ |  __cause__
+ |      exception cause
+ |  
+ |  __context__
+ |      exception context
+ |  
+ |  __dict__
+ |  
+ |  __suppress_context__
+ |  
+ |  __traceback__
+ |  
+ |  args
+
+>>> import sys
+>>> def sum_cycle(n):
+	sum=0
+	for i in range(1,n+1):
+		sum +=i
+	return sum
+def sum_recu(n):
+	
+SyntaxError: invalid syntax
+>>> def sum_cycle(n):
+	sum=0
+	for i in range(1,n+1):
+		sum +=i
+	return sum
+
+>>> def sum_recu(n):
+	if n>0:
+		return n+sum_recu(n-1)
+	else:
+		return 0
+
+	
+>>> print("循环求和",sum_cycle(100))
+循环求和 5050
+>>> print("递归求和",sum_recu(100))
+递归求和 5050
+>>> print("递归求和",sum_recu(-100))
+递归求和 0
+>>> def sum_recu2(n):
+	if n>0:
+		return n+sum_recu2(n-1)
+	else:
+		return n+sum_recu2(n+1)
+
+	
+>>> print("负数递归求和",sum_recu2(-100))
+Traceback (most recent call last):
+  File "<pyshell#121>", line 1, in <module>
+    print("负数递归求和",sum_recu2(-100))
+  File "<pyshell#120>", line 5, in sum_recu2
+    return n+sum_recu2(n+1)			
+	……………………………………
+RecursionError: maximum recursion depth exceeded in comparison
+>>> def sum_recu2(n):
+	if n>0:
+		return n+sum_recu2(n-1)
+	if n=0:
+		
+SyntaxError: invalid syntax
+>>> def sum_recu2(n):
+	if n>0:
+		return n+sum_recu2(n-1)
+	if n==0:
+		return 0
+	else:
+		return n+sum_recu2(n+1)
+
+	
+>>> print("负数递归求和",sum_recu2(-100))
+负数递归求和 -5050
+>>> def print_lol(the_list):
+	for each_item in the_list:
+		if isinstance(each_item,list):
+			print_lol(each_item)
+		else:
+			print(each_item)
+
+			
+>>> print(movies)
+['the holy grial', 1975, 'terry jones & terry gilliam', 91, ['graham chapman', ['machael palin', 'john cleese', 'terry gilliam', 'eric idle', 'terry jones']]]
+>>> print_lol(movies)
+the holy grial
+1975
+terry jones & terry gilliam
+91
+graham chapman
+machael palin
+john cleese
+terry gilliam
+eric idle
+terry jones
