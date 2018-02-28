@@ -122,7 +122,7 @@ Yes it is!
 ##
 ##
 ###3. 处理数据然后进行排序
-##def sanitize(time_string):
+##def santize(time_string):
 ##        if '-' in time_string:
 ##                splitter='-'
 ##        elif ':' in time_string:
@@ -138,17 +138,17 @@ Yes it is!
 ##clean_sarah=[]
 ##
 ##for each_james in james_data:
-##        clean_james.append(sanitize(each_james))
+##        clean_james.append(santize(each_james))
 ##
 ###for语句等价于以下语句，转换成一行代码利用列表推到来完成，这个列表推导隐含append()方法
-###clean_james=[sanitize(each_james) for each_james in james_data]
+###clean_james=[santize(each_james) for each_james in james_data]
 ##
 ##for each_julie in julie_data:
-##        clean_julie.append(sanitize(each_julie))
+##        clean_julie.append(santize(each_julie))
 ##for each_mikey in mikey_data:
-##        clean_mikey.append(sanitize(each_mikey))
+##        clean_mikey.append(santize(each_mikey))
 ##for each_sarah in sarah_data:
-##        clean_sarah.append(sanitize(each_sarah))
+##        clean_sarah.append(santize(each_sarah))
 ##
 ##print('=====================处理1======================')
 ##print(clean_james)
@@ -189,10 +189,10 @@ Yes it is!
 ##'''
 ###5. 用集合删除重复项
 ##print('===========注释第2~4段代码,保留sanitize()方法============')
-##print(sorted(set([sanitize(t) for t in james_data])))
-##print(sorted(set([sanitize(t) for t in julie_data]))[0:3])
-##print(sorted(set([sanitize(t) for t in mikey_data]))[0:3])
-##print(sorted(set([sanitize(t) for t in sarah_data]))[0:3])
+##print(sorted(set([santize(t) for t in james_data])))
+##print(sorted(set([santize(t) for t in julie_data]))[0:3])
+##print(sorted(set([santize(t) for t in mikey_data]))[0:3])
+##print(sorted(set([santize(t) for t in sarah_data]))[0:3])
 ##'''
 ###6. 将第1部分的4个with语句改为函数然后进行调用
 ##
@@ -209,10 +209,10 @@ Yes it is!
 ##mikey_data1 = get_coach_data('mikey.txt')
 ##sarah_data1 = get_coach_data('sarah.txt')
 ##print('====使用两个自定义函数的调用打印列表前三项数据===')
-##print(sorted(set([sanitize(t) for t in james_data1]))[0:3])
-##print(sorted(set([sanitize(t) for t in julie_data1]))[0:3])
-##print(sorted(set([sanitize(t) for t in mikey_data1]))[0:3])
-##print(sorted(set([sanitize(t) for t in sarah_data1]))[0:3])
+##print(sorted(set([santize(t) for t in james_data1]))[0:3])
+##print(sorted(set([santize(t) for t in julie_data1]))[0:3])
+##print(sorted(set([santize(t) for t in mikey_data1]))[0:3])
+##print(sorted(set([santize(t) for t in sarah_data1]))[0:3])
 ##
 
 #第6章 定制数据对象--打包代码与数据
@@ -226,7 +226,7 @@ os.chdir("E:\\qsl\\learning\\Python\\chapter6")
 ##        except IOError as ioerr:
 ##                print("File Error: "+str(ioerr))
 ##                return(None)
-def sanitize(time_string):
+def santize(time_string):
         if '-' in time_string:
                 splitter='-'
         elif ':' in time_string:
@@ -242,13 +242,13 @@ def sanitize(time_string):
 ##mikey_data1 = get_coach_data('mikey2.txt')
 ##sarah_data1 = get_coach_data('sarah2.txt')
 ##(james_name,james_dob) = james_data1.pop(0),james_data1.pop(0)
-##print(james_name + "'s faster times are: " + str(sorted(set([sanitize(t) for t in james_data1]))[0:3]))
+##print(james_name + "'s faster times are: " + str(sorted(set([santize(t) for t in james_data1]))[0:3]))
 ##(julie_name,julie_dob) = julie_data1.pop(0),julie_data1.pop(0)
-##print(julie_name + "'s faster times are: " + str(sorted(set([sanitize(t) for t in julie_data1]))[0:3]))
+##print(julie_name + "'s faster times are: " + str(sorted(set([santize(t) for t in julie_data1]))[0:3]))
 ##(mikey_name,mikey_dob) = mikey_data1.pop(0),mikey_data1.pop(0)
-##print(mikey_name + "'s faster times are: " + str(sorted(set([sanitize(t) for t in mikey_data1]))[0:3]))
+##print(mikey_name + "'s faster times are: " + str(sorted(set([santize(t) for t in mikey_data1]))[0:3]))
 ##(sarah_name,sarch_dob) = sarah_data1.pop(0),sarah_data1.pop(0)
-##print(sarah_name + "'s faster times are: " + str(sorted(set([sanitize(t) for t in sarah_data1]))[0:3]))
+##print(sarah_name + "'s faster times are: " + str(sorted(set([santize(t) for t in sarah_data1]))[0:3]))
 
 ###2. 使用字典关联数据，改写get_coach_data()，将print语句中的str(……)写入函数
 ##
@@ -259,7 +259,7 @@ def sanitize(time_string):
 ##                temp=data.strip().split(',')
 ##                return({'Name':temp.pop(0),
 ##                        'Dob':temp.pop(0),
-##                        'Times':str(sorted(set([sanitize(t) for t in temp]))[0:3])})
+##                        'Times':str(sorted(set([santize(t) for t in temp]))[0:3])})
 ##        except IOError as ioerr:
 ##                print("File Error: "+str(ioerr))
 ##                return(None)
@@ -275,24 +275,67 @@ def sanitize(time_string):
 
 #3. 使用class定义类，类中的方法也用def进行定义
 
-class Athlete:
-        def __init__(self, a_name, a_dob=None, a_times=[]):#每个定义类的特殊方法，控制如何初始化对象
-                #The code to initialize a "Athlete" object.
+##class Athlete:
+##        def __init__(self, a_name, a_dob=None, a_times=[]):#每个定义类的特殊方法，控制如何初始化对象
+##                #The code to initialize a "Athlete" object.
+##                self.name=a_name
+##                self.dob=a_dob
+##                self.times=a_times
+##        def top3(self):
+##                #santize()不用修改
+##                return(sorted(set([santize(t) for t in self.times]))[0:3])
+##
+##        #在print调试完成后再次添加新的方法
+##        def add_time(self,timevalue):
+##                return(self.times.append(timevalue))
+##        def add_times(self,list_of_time):
+##                return(self.times.extend(list_of_time))
+##                
+###get_coach_data()需要修改
+##def get_coach_data(filename):
+##        try:
+##                with open(filename) as f:
+##                        data=f.readline()
+##                temp=data.strip().split(',')
+##                return(Athlete(temp.pop(0),temp.pop(0),temp))
+##        except IOError as ioerr:
+##                print("File Error: "+str(ioerr))
+##                return(None)
+##james_data3=get_coach_data('james2.txt')
+##print(james_data3.name+"'s fastest times are： "+str(james_data3.top3()))
+##julie_data3=get_coach_data('julie2.txt')
+##print(julie_data3.name+"'s fastest times are： "+str(julie_data3.top3()))
+##mikey_data3=get_coach_data('mikey2.txt')
+##print(mikey_data3.name+"'s fastest times are： "+str(mikey_data3.top3()))
+##sarah_data3=get_coach_data('sarah2.txt')
+##print(sarah_data3.name+"'s fastest times are： "+str(sarah_data3.top3()))
+
+#4. 继承python内置的list（Athlete类实际上只是一个列表，只是增加了一些属性）
+        #将原来的Athlete类代码替换为AthleteList类，继承自list
+class AthleteList(list):
+        def __init__(self,a_name,a_dob=None,a_times=[]):
                 self.name=a_name
                 self.dob=a_dob
-                self.times=a_times
+                self.extend(a_times)
         def top3(self):
-                #sanitize()不用修改
-                return(sorted(set([sanitize(t) for t in self.times]))[0:3])
-#get_coach_data()需要修改
+                return(sorted(set([santize(t) for t in self]))[0:3])
+
+#相应的修改get_coach_data()代码
 def get_coach_data(filename):
         try:
                 with open(filename) as f:
-                        data=f.readline()
-                temp=data.strip().split(',')
-                return(Athlete(temp.pop(0),temp.pop(0),temp))
+                        data = f.readline()
+                temp = data.strip().split(',')
+                return(AthleteList(temp.pop(0),temp.pop(0),temp))
         except IOError as ioerr:
-                print("File Error: "+str(ioerr))
-                return(None)
-james_data3=get_coach_data('james2.txt')
-print(james_data3.name+"'s fastest times are"+str(james_data3.top3()))
+                       print('File Error: '+str(ioerr))
+                       return(None)
+james_data4=get_coach_data('james2.txt')
+print(james_data4.name+"'s fastest times are： "+str(james_data4.top3()))
+julie_data4=get_coach_data('julie2.txt')
+print(julie_data4.name+"'s fastest times are： "+str(julie_data4.top3()))
+mikey_data4=get_coach_data('mikey2.txt')
+print(mikey_data4.name+"'s fastest times are： "+str(mikey_data4.top3()))
+sarah_data4=get_coach_data('sarah2.txt')
+print(sarah_data4.name+"'s fastest times are： "+str(sarah_data4.top3()))
+
