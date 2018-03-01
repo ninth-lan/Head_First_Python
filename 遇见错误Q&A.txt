@@ -1,2 +1,7 @@
 Q:	SyntaxError: invalid character in identifier
 A:	在提示错误的附近检查标点符号修改为英文格式
+
+Q:（在上传pypi时遇见的错误）	HTTPError: 400 Client Error: User 'qsl' has no verified email addresses, please verify at least one address before registering a new project on PyPI. See https: //pypi.org/help/#verified-email for more information. for url: https://upload.pypi.org/legacy/
+A:	You need to login to https://pypi.org/ instead of the old https://pypi.python.org/pypi.
+https://pypi.org shows a "pre-production" warning on top, but that doesn't matter. Login to your account, go to account setting, and verify your email. The old site doesn't have a way to check whether your email is verified or not.
+即在新的网址https://pypi.org/验证电子邮件
