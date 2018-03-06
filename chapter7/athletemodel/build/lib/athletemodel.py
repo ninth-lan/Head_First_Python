@@ -1,20 +1,20 @@
 import pickle
-#from athletelist import AthleteList
-import athletelist
-##
-##def get_coach_data(filename):
-##    try:
-##        with open(filename) as f:
-##            data = f.readline()
-##        temp=data.strip().split(',')
-##        return(AthleteList(temp.pop(0),temp.pop(0),temp))
-##    except IOError as ioerr:
-##        print("File Error (get_coach_data): " + str(ioerr))
-##        return(None)
+from athletelist import AthleteList
+#import athletelist
+
+def get_coach_data(filename):
+    try:
+        with open(filename) as f:
+            data = f.readline()
+        temp=data.strip().split(',')
+        return(AthleteList(temp.pop(0),temp.pop(0),temp))
+    except IOError as ioerr:
+        print("File Error (get_coach_data): " + str(ioerr))
+        return(None)
 def put_to_store(file_list):
     all_athletes = {}
     for each_file in file_list:
-        ath=athletelist.get_coach_data(each_file)
+        ath=get_coach_data(each_file)
         all_athletes[ath.name]=ath
     try:
         with open('athletes.pickle','wb') as athf:
@@ -33,6 +33,5 @@ def get_from_store():
 
 
 
-the_files=['sarah2.txt','james2.txt','mikey2.txt','julie2.txt']
-data = put_to_store(the_files)
-print(data)
+
+
