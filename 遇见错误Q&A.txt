@@ -5,3 +5,5 @@ Q:（在上传pypi时遇见的错误）	HTTPError: 400 Client Error: User 'qsl' 
 A:	You need to login to https://pypi.org/ instead of the old https://pypi.python.org/pypi.
 https://pypi.org shows a "pre-production" warning on top, but that doesn't matter. Login to your account, go to account setting, and verify your email. The old site doesn't have a way to check whether your email is verified or not.
 即在新的网址https://pypi.org/验证电子邮件
+
+QQQ
